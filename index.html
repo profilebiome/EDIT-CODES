@@ -930,7 +930,7 @@
             }
         }
 
-        // --- GENERAR EMBED DE MEDIA (ACTUALIZADO PARA ACEPTAR TODO TIPO DE LINKS) ---
+        // --- GENERAR EMBED DE MEDIA (CORREGIDO PARA ACEPTAR TODO TIPO DE LINKS) ---
         function generateMediaEmbed(url, isFullView = false) {
             if (!url) return null;
             
@@ -950,7 +950,7 @@
             const igMatch = url.match(/instagram\.com\/(?:p|reel)\/([a-zA-Z0-9_-]+)/);
             if (igMatch && igMatch[1]) return `<div class="media-wrapper instagram"><iframe src="https://www.instagram.com/p/${igMatch[1]}/embed" scrolling="no" allowtransparency="true" loading="lazy"></iframe></div>`;
 
-            // PROFILEBIO (y cualquier otro enlace con scroll)
+            // PROFILEBIO (y cualquier otro enlace genérico)
             if (url.includes('profilebio.me')) {
                 return `<div class="media-wrapper profilebio"><iframe src="${url}" allowfullscreen loading="lazy" scrolling="auto" style="width:100%; height:100%; border:none; background:#111;"></iframe></div>`;
             }
@@ -960,13 +960,13 @@
                 return `<div class="img-container"><img class="post-img" src="${url}" alt="Media" loading="lazy"></div>`;
             }
 
-            // --- NUEVO: Google Drive (imágenes, vídeos, etc.) ---
+            // --- NUEVO: Google Drive (vista previa) ---
             const driveMatch = url.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/);
             if (driveMatch) {
                 return `<div class="media-wrapper"><iframe src="https://drive.google.com/file/d/${driveMatch[1]}/preview" allowfullscreen loading="lazy"></iframe></div>`;
             }
 
-            // --- NUEVO: Google Photos (compartidos, álbumes, enlaces cortos) ---
+            // --- NUEVO: Google Photos / álbumes / enlaces cortos como share.google ---
             if (url.includes('photos.google.com') || url.includes('photos.app.goo.gl') || url.includes('share.google')) {
                 return `<div class="media-wrapper photos"><iframe src="${url}" allowfullscreen loading="lazy"></iframe></div>`;
             }
