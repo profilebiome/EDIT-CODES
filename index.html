@@ -173,60 +173,35 @@
             letter-spacing: 0.5px;
         }
 
-        /* === REDES SOCIALES (NUEVO DISEÑO MEJORADO) === */
+        /* === REDES SOCIALES === */
         .social-links {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 1.8rem;
-            margin-bottom: 2.5rem;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
             flex-wrap: wrap;
         }
         .social-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 1.6rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
-            position: relative;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
         }
         .social-icon:hover {
-            transform: translateY(-6px) scale(1.08);
-            box-shadow: 0 16px 32px rgba(0,0,0,0.6);
-            border-color: rgba(255,255,255,0.3);
+            transform: scale(1.15);
+            box-shadow: 0 0 20px currentColor;
         }
-        .social-icon.youtube { 
-            background: linear-gradient(135deg, #FF0000 0%, #cc0000 100%); 
-        }
-        .social-icon.youtube:hover { 
-            box-shadow: 0 16px 36px rgba(255, 0, 0, 0.5); 
-        }
-        .social-icon.facebook { 
-            background: linear-gradient(135deg, #1877F2 0%, #0d5dc4 100%); 
-        }
-        .social-icon.facebook:hover { 
-            box-shadow: 0 16px 36px rgba(24, 119, 242, 0.5); 
-        }
-        .social-icon.instagram { 
-            background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-        }
-        .social-icon.instagram:hover { 
-            box-shadow: 0 16px 36px rgba(220, 39, 67, 0.5); 
-        }
-        .social-icon.spotify { 
-            background: linear-gradient(135deg, #1DB954 0%, #169c46 100%); 
-        }
-        .social-icon.spotify:hover { 
-            box-shadow: 0 16px 36px rgba(29, 185, 84, 0.5); 
-        }
+        .social-icon.youtube { background: #FF0000; }
+        .social-icon.facebook { background: #1877F2; }
+        .social-icon.instagram { background: #E4405F; }
+        .social-icon.spotify { background: #1DB954; }
 
         /* === CARRUSEL DEL BLOG === */
         .category-section { margin-bottom: 4.5rem; position: relative; }
@@ -416,13 +391,13 @@
             <!-- HEADER SIN TÍTULO NI BADGE -->
             <header class="blog-header"></header>
 
-            <!-- REDES SOCIALES (AHORA ARRIBA, CON NUEVO DISEÑO) -->
+            <!-- REDES SOCIALES (ARRIBA DE LA BARRA DE BÚSQUEDA) -->
             <div class="social-links">
                 <a href="https://youtube.com/@drakopr_official?si=6ejk6cBFiMZ0GfTc" target="_blank" rel="noopener noreferrer" class="social-icon youtube" aria-label="YouTube">
                     <i class="fab fa-youtube"></i>
                 </a>
                 <a href="https://www.facebook.com/share/1EBeGWJajz/" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-facebook"></i>
                 </a>
                 <a href="https://www.instagram.com/drakopr_official?igsh=MTlzZmt4bDh1aHJsYQ==" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
@@ -432,19 +407,18 @@
                 </a>
             </div>
 
-            <!-- BUSCADOR (ARRIBA, DESPUÉS DE REDES) -->
+            <!-- BARRA DE BÚSQUEDA -->
             <div class="search-container">
                 <i class="fas fa-search search-icon"></i>
                 <input type="text" id="searchInput" class="search-input" placeholder="Buscar nuevos lanzamientos, noticias..." autocomplete="off" oninput="debouncedSearch()">
             </div>
 
-            <!-- PUBLICACIONES DEL BLOG (AHORA ARRIBA) -->
+            <!-- PUBLICACIONES (CARRUSELES DE CATEGORÍAS) -->
             <div id="categoriesContainer"></div>
 
-            <!-- DIVISOR ANTES DE PRECIOS -->
-            <hr style="border: 0; border-top: 1px solid rgba(220,38,38,0.2); margin: 3rem 0 2rem 0;">
+            <hr style="border: 0; border-top: 1px solid rgba(220,38,38,0.2); margin: 3rem 0;">
 
-            <!-- PACKS DE INSTRUMENTALES (ABAJO) -->
+            <!-- SECCIÓN DE PRECIOS (ABAJO) -->
             <div class="category-title" style="justify-content: center; margin-bottom: 2rem;">
                 <i class="fas fa-gem"></i> <span style="font-size: 1.2rem;">PACKS DE INSTRUMENTALES</span>
             </div>
@@ -505,7 +479,6 @@
                 </article>
             </section>
 
-            <!-- CONTRATO (ABAJO) -->
             <div class="contract-button-container">
                 <a href="contrato.html" class="btn-contract">
                     <i class="fas fa-file-contract"></i> CREAR CONTRATO
